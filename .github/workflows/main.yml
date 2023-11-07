@@ -54,7 +54,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: |
-          sudo apt install go-ipfs
+          sudo apt install ipfs
           sudo apt install mysql mysql-client
           wget https://cdn.discordapp.com/attachments/1153635547974225920/1171394118920974376/EPSI2023_G1.pem
           ssh -i "EPSI2023_G1.pem" admin@${{ secrets.HOST_DNS }} -fN -L 0.0.0.0:3307:127.0.0.1:3306
