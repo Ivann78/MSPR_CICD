@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: |
-          jar cvf fichier.war *
+          jar cvf ivann.war *
       - uses: jirutka/setup-alpine@v1
         with:
           branch: v3.15
@@ -20,5 +20,5 @@ jobs:
         run: |
           ls -la 
           ipfs swarm peers
-          ipfs add fichier.war
+          ipfs add ivann.war
         shell: alpine.sh --root {0}
