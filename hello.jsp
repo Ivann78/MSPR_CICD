@@ -5,7 +5,8 @@
 </head>
 <body bgcolor=white>
 
-<table border="0" role="presentation">
+<table border="0" aria-describedby="table">
+    <th></th>
     <tr>
         <td align=center>
             <img src="images/tomcat.gif" alt="tomcat">
