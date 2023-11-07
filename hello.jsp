@@ -6,7 +6,6 @@
 <body bgcolor=white>
 
 <table border="0" role="presentation">
-    <th></th>
     <tr>
         <td align=center>
             <img src="images/tomcat.gif" alt="tomcat">
