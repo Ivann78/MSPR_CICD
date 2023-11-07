@@ -9,7 +9,7 @@
     <th></th>
     <tr>
         <td align=center>
-            <img src="images/tomcat.gif">
+            <img src="images/tomcat.gif" alt="tomcat">
         </td>
         <td>
             <h1>Sample Application JSP Page</h1>
