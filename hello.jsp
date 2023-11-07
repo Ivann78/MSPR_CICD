@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 <title>Sample Application JSP Page</title>
 </head>
 <body bgcolor=white>
 
-<table border="0">
+<table border="0" summary="table">
+    <th></th>
     <tr>
         <td align=center>
             <img src="images/tomcat.gif">
