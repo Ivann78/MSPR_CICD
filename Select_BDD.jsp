@@ -40,9 +40,8 @@
         Class.forName("org.mariadb.jdbc.Driver");
         Connection conn = DriverManager.getConnection(url, user, password);
 
-        String sql = "SELECT idFilm, titre, année FROM Film WHERE année >= " + annee + " ORDER BY année ASC";
-        out.println(sql);
-        PreparedStatement pstmt = conn.prepareStatement(sql);
+        PreparedStatement pstmt = conn.prepareStatement("SELECT idFilm, titre, année FROM Film WHERE année >= ? ORDER BY année ASC");
+        pstmt.setString(1, annee);
         ResultSet rs = pstmt.executeQuery();
 
         out.println("<table><tr><th>ID</th><th>Titre</th><th>Année</th></tr>");
