@@ -45,18 +45,22 @@ Connection conn = DriverManager.getConnection(url, user, password);
                 PreparedStatement pstmt = conn.prepareStatement("SELECT max(idFilm) AS maxId FROM Film");
                 ResultSet rs = pstmt.executeQuery();
 
+                String maxId = null;
+
                 while (rs.next()) {
-                    String maxId = rs.getString("maxId");
+                    maxId = rs.getString("maxId");
                 }
 
-                int NewId = Integer.parseInt(maxId);
-                out.println(NewId);
+                if (maxId != null) {
+                    int newId = Integer.parseInt(maxId) + 1;
+                    out.println(newId);
 
-                PreparedStatement pstmt2 = conn.prepareStatement("INSERT INTO Film (idFilm, titre, année) VALUES (?, ?, ?);");
-                pstmt2.setString(1, maxId+1);
-                pstmt2.setString(2, request.getParameter("add_name"));
-                pstmt2.setString(3, request.getParameter("add_annee"));
-                ResultSet rowInsert = pstmt2.executeQuery();
+                    PreparedStatement pstmt2 = conn.prepareStatement("INSERT INTO Film (idFilm, titre, année) VALUES (?, ?, ?);");
+                    pstmt2.setString(1, newId);
+                    pstmt2.setString(2, request.getParameter("add_name"));
+                    pstmt2.setString(3, request.getParameter("add_annee"));
+                    ResultSet rowInsert = pstmt2.executeQuery();
+                }
             } catch (SQLException e) {
                 out.println("Error: " + e.getMessage());
                 e.printStackTrace();
