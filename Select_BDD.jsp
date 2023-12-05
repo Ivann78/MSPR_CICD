@@ -30,18 +30,10 @@ Connection conn = DriverManager.getConnection(url, user, password);
     <%
         if (request.getParameter("id") != null && request.getParameter("name") != null && !request.getParameter("name").equals("")) {
             out.println("True");
-            try {
-            // Assuming conn is already established
             PreparedStatement pstmt = conn.prepareStatement("UPDATE Film SET titre = ? WHERE id = ?;");
-            pstmt.setString(1, request.getParameter("name"));  // Assuming "name" is the new title
+            pstmt.setString(1, request.getParameter("name"));
             pstmt.setString(2, request.getParameter("id"));
-            
-            int rowsUpdated = pstmt.executeUpdate();
-            
-            out.println(rowsUpdated + " row(s) updated.");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+            int rowUpdate = pstmt.executeUpdate();
         } else {
             out.println("False");
         }
