@@ -29,9 +29,10 @@
         while (rs.next()) {
             String colonne1 = rs.getString("idFilm");
             String colonne2 = rs.getString("titre");
+            String colonne3 = rs.getString("année");
             // Faites ce que vous voulez avec les données...
             //Exemple d'affichage de 2 colonnes
-            out.println("Colonne 1 : " + colonne1 + ", Colonne 2 : " + colonne2 + "</br>");
+            out.println("Colonne 1 : " + colonne1 + ", Colonne 2 : " + colonne2 + "(" + colonne3 + ")</br>");
         }
 
         // Fermer les ressources 
