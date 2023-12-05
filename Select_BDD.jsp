@@ -33,43 +33,33 @@
     <br>
 
     <%
-        Connection connection = null;
-        Statement statement = null;
-        ResultSet rs = null;
+        String url = "jdbc:mariadb://localhost:3306/films";
+        String user = "mysql";
+        String password = "mysql";
 
-        // try {
-            Class.forName("org.mariadb.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/films?user=root&password=root");
+        Class.forName("org.mariadb.jdbc.Driver");
+        Connection conn = DriverManager.getConnection(url, user, password);
 
-            statement = connection.createStatement();
-            String sql = "SELECT idFilm, titre, année FROM Film WHERE année >= 2000 ORDER BY année ASC";
-            rs = statement.executeQuery(sql);
+        String sql = "SELECT idFilm, titre, année FROM Film WHERE année >= 2000 ORDER BY année ASC";
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        ResultSet rs = pstmt.executeQuery();
 
-            out.println("<table><tr><th>ID</th><th>Titre</th><th>Année</th></tr>");
+        out.println("<table><tr><th>ID</th><th>Titre</th><th>Année</th></tr>");
 
-            // Afficher les résultats (à adapter selon vos besoins)
-            while (rs.next()) {
-                out.println("<tr><td>rs</td></tr>");
-                String colonne1 = rs.getString("idFilm");
-                String colonne2 = rs.getString("titre");
-                String colonne3 = rs.getString("année");
+        while (rs.next()) {
+            out.println("<tr><td>rs</td></tr>");
+            String colonne1 = rs.getString("idFilm");
+            String colonne2 = rs.getString("titre");
+            String colonne3 = rs.getString("année");
 
-                out.println("<tr><td>" + colonne1 + "</td><td>" + colonne2 + "</td><td>" + colonne3 + "</td></tr>");
-            }
+            out.println("<tr><td>" + colonne1 + "</td><td>" + colonne2 + "</td><td>" + colonne3 + "</td></tr>");
+        }
 
-            out.println("</table>");
+        out.println("</table>");
 
-        // } catch (ClassNotFoundException | SQLException e) {
-        //     e.printStackTrace();
-        // } finally {
-        //     try {
-        //         if (rs != null) rs.close();
-        //         if (statement != null) statement.close();
-        //         if (connection != null) connection.close();
-        //     } catch (SQLException e) {
-        //         e.printStackTrace();
-        //     }
-        // }
+        rs.close();
+        pstmt.close();
+        conn.close();
     %>
     <img src="https://cdn.discordapp.com/attachments/908889456818397267/1168852446634852452/1697550731048120.gif" alt="ryan">
 </body>
