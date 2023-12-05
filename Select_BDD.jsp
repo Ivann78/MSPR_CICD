@@ -18,10 +18,9 @@
 <body>
     <h1>Exemple de connexion à MySQL via JSP</h1>
 
-    <form action="get">
+    <form action="" method="get">
         <input name="annee" type="text">
         <input type="submit">
-        <input type="reset">
     </form>
 
     <% 
