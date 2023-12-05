@@ -18,7 +18,13 @@
 <body>
     <h1>Exemple de connexion à MySQL via JSP</h1>
 
-    <% String annee = request.getParameter("annee"); %>
+    <%
+        if (!empty(request.getParameter("annee"))) {
+            String annee = request.getParameter("annee");
+        } else {
+            String annee;
+        }
+    %>
 
     <form action="" method="get">
         <input name="annee" type="text" value="<% out.println(annee); %>">
