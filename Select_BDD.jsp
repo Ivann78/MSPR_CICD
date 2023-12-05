@@ -49,7 +49,7 @@ Connection conn = DriverManager.getConnection(url, user, password);
                     String maxId = rs.getString("maxId");
                 }
 
-                Int NewId = Integer.parseInt(maxId);
+                int NewId = Integer.parseInt(maxId);
                 out.println(NewId);
 
                 PreparedStatement pstmt2 = conn.prepareStatement("INSERT INTO Film (idFilm, titre, année) VALUES (?, ?, ?);");
