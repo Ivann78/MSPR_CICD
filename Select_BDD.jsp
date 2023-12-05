@@ -42,11 +42,12 @@ Connection conn = DriverManager.getConnection(url, user, password);
 
         if (request.getParameter("add_name") != null && !request.getParameter("add_name").equals("") && request.getParameter("add_annee") != null && !request.getParameter("add_annee").equals("")) {
             try {
+                String maxId
                 PreparedStatement pstmt = conn.prepareStatement("SELECT max(idFilm) AS maxId FROM Film");
                 ResultSet rs = pstmt.executeQuery();
 
                 while (rs.next()) {
-                    String maxId = rs.getString("maxId");
+                    maxId = rs.getString("maxId");
                 }
 
                 PreparedStatement pstmt = conn.prepareStatement("INSERT INTO Film (idFilm, titre, année) VALUES (?, ?, ?);");
