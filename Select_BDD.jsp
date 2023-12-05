@@ -62,7 +62,7 @@
             e.printStackTrace();
         } finally {
             try {
-                if (resultSet != null) resultSet.close();
+                if (rs != null) rs.close();
                 if (statement != null) statement.close();
                 if (connection != null) connection.close();
             } catch (SQLException e) {
