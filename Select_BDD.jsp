@@ -34,6 +34,7 @@ Connection conn = DriverManager.getConnection(url, user, password);
             pstmt.setString(1, request.getParameter("name"));
             pstmt.setString(2, request.getParameter("id"));
             int rowUpdate = pstmt.executeUpdate();
+            out.println(rowUpdate + " row(s) updated.");
         } else {
             out.println("False");
         }
