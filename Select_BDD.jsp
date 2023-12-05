@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Connexion à MySQL via JSP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <h1>Exemple de connexion à MySQL via JSP</h1>
