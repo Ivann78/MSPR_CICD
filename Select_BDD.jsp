@@ -81,7 +81,7 @@ Connection conn = DriverManager.getConnection(url, user, password);
 
     Recherche par année:
     <form method="get">
-        <input name="annee" type="text" value="<% out.println(annee); %>">
+        <input name="annee" type="text" placeholder ="Année"value="<% out.println(annee); %>">
         <input type="submit">
     </form>
     <br>
@@ -108,14 +108,15 @@ Connection conn = DriverManager.getConnection(url, user, password);
         pstmt.setString(1, annee);
         ResultSet rs = pstmt.executeQuery();
 
-        out.println("<table><tr><th>ID</th><th>Titre</th><th>Année</th></tr>");
+        out.println("<table><tr><th>ID</th><th>Titre</th><th>Année</th><th>Genre</th></tr>");
 
         while (rs.next()) {
             String colonne1 = rs.getString("idFilm");
             String colonne2 = rs.getString("titre");
             String colonne3 = rs.getString("année");
+            String colonne4 = rs.getString("genre");
 
-            out.println("<tr><td>" + colonne1 + "</td><td>" + colonne2 + "</td><td>" + colonne3 + "</td></tr>");
+            out.println("<tr><td>" + colonne1 + "</td><td>" + colonne2 + "</td><td>" + colonne3 + "</td><td>" + colonne4 + "</td></tr>");
         }
 
         out.println("</table>");
