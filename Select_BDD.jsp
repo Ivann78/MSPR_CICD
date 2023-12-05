@@ -19,7 +19,7 @@
     <h1>Exemple de connexion à MySQL via JSP</h1>
 
     <%
-        String annee = "2000";
+        Int annee = "2000";
 
         if (request.getParameter("annee") != null) {
             annee = request.getParameter("annee");
