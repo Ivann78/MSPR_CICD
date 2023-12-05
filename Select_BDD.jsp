@@ -24,6 +24,7 @@
         } else {
             String annee = "";
         }
+        out.println(annee);
     %>
 
     <form action="" method="get">
