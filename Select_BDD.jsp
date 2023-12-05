@@ -33,7 +33,8 @@
     <br>
 
     <%
-    String url = "jdbc:mysql://localhost:3306/films";
+    // Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/DB?user=root&password=myPassword");
+    String url = "jdbc:mariadb://localhost:3306/films";
     String user = "root";
     String password = "root";
 
