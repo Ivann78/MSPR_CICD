@@ -48,8 +48,11 @@ Connection conn = DriverManager.getConnection(url, user, password);
                 ResultSet rs = pstmt.executeQuery();
 
                 while (rs.next()) {
-                    NewId = Integer.parseInt(rs.getString("maxId"));
+                    maxId = rs.getString("maxId");
                 }
+
+                NewId = Integer.parseInt(maxId)
+                out.println(NewId)
 
                 PreparedStatement pstmt = conn.prepareStatement("INSERT INTO Film (idFilm, titre, année) VALUES (?, ?, ?);");
                 pstmt.setString(1, maxId+1);
