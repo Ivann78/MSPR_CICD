@@ -42,11 +42,12 @@ Connection conn = DriverManager.getConnection(url, user, password);
 
         if (request.getParameter("add_name") != null && !request.getParameter("add_name").equals("") && request.getParameter("add_annee") != null && !request.getParameter("add_annee").equals("")) {
             try {
-                PreparedStatement pstmt = conn.prepareStatement("SELECT max(idFilm) FROM Film");
+                PreparedStatement pstmt = conn.prepareStatement("SELECT max(idFilm) AS maxId FROM Film");
                 ResultSet rs = pstmt.executeQuery();
 
                 while (rs.next()) {
                     String colonne1 = rs.getString("idFilm");
+                    String colonne1 = rs.getString("maxId");
                     out.println(colonne1);
                 }
 
@@ -64,9 +65,6 @@ Connection conn = DriverManager.getConnection(url, user, password);
         if (request.getParameter("annee") != null) {
             annee = request.getParameter("annee");
         }
-
-        out.println(request.getParameter("name"));
-        out.println(request.getParameter("id"));
     %>
 
     Recherche par année:
