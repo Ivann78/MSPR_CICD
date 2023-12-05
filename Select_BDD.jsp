@@ -52,11 +52,11 @@ Connection conn = DriverManager.getConnection(url, user, password);
                 Int NewId = Integer.parseInt(maxId);
                 out.println(NewId);
 
-                PreparedStatement pstmt = conn.prepareStatement("INSERT INTO Film (idFilm, titre, année) VALUES (?, ?, ?);");
-                pstmt.setString(1, maxId+1);
-                pstmt.setString(2, request.getParameter("add_name"));
-                pstmt.setString(3, request.getParameter("add_annee"));
-                ResultSet rowInsert = pstmt.executeQuery();
+                PreparedStatement pstmt2 = conn.prepareStatement("INSERT INTO Film (idFilm, titre, année) VALUES (?, ?, ?);");
+                pstmt2.setString(1, maxId+1);
+                pstmt2.setString(2, request.getParameter("add_name"));
+                pstmt2.setString(3, request.getParameter("add_annee"));
+                ResultSet rowInsert = pstmt2.executeQuery();
             } catch (SQLException e) {
                 out.println("Error: " + e.getMessage());
                 e.printStackTrace();
