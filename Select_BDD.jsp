@@ -56,10 +56,11 @@ Connection conn = DriverManager.getConnection(url, user, password);
                         int newId = Integer.parseInt(maxId) + 1;
                         out.println(newId);
 
-                        PreparedStatement pstmt2 = conn.prepareStatement("INSERT INTO Film (idFilm, titre, année) VALUES (?, ?, ?);");
+                        PreparedStatement pstmt2 = conn.prepareStatement("INSERT INTO Film (idFilm, titre, année, genre) VALUES (?, ?, ?, ?);");
                         pstmt2.setInt(1, newId);
                         pstmt2.setString(2, request.getParameter("add_name"));
                         pstmt2.setString(3, request.getParameter("add_annee"));
+                        pstmt2.setString(4, request.getParameter("add_genre"));
                         ResultSet rowInsert = pstmt2.executeQuery();
                     } catch (SQLException e) {
                         out.println("Error: " + e.getMessage());
@@ -97,6 +98,7 @@ Connection conn = DriverManager.getConnection(url, user, password);
     <form name="add_title" method="post">
         <input name="add_name" type="text" placeholder="Nom">
         <input name="add_annee" type="text" placeholder="Année">
+        <input name="add_name" type="text" placeholder="Genre">
         <input type="submit">
     </form>
     <br>
