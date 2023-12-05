@@ -7,6 +7,13 @@
     <meta charset="UTF-8">
     <title>Connexion à MySQL via JSP</title>
 </head>
+
+<style>
+    td {
+        padding-left padding-right: 0.1rem;
+    }
+</style>
+
 <body>
     <h1>Exemple de connexion à MySQL via JSP</h1>
     <% 
