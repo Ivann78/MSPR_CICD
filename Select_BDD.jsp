@@ -37,9 +37,9 @@
         Statement statement = null;
         ResultSet rs = null;
 
-        try {
+        // try {
             Class.forName("org.mariadb.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mariadb://localhost:8080/films?user=root&password=root");
+            connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/films?user=root&password=root");
 
             statement = connection.createStatement();
             String sql = "SELECT idFilm, titre, année FROM Film WHERE année >= 2000 ORDER BY année ASC";
@@ -59,17 +59,17 @@
 
             out.println("</table>");
 
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (rs != null) rs.close();
-                if (statement != null) statement.close();
-                if (connection != null) connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+        // } catch (ClassNotFoundException | SQLException e) {
+        //     e.printStackTrace();
+        // } finally {
+        //     try {
+        //         if (rs != null) rs.close();
+        //         if (statement != null) statement.close();
+        //         if (connection != null) connection.close();
+        //     } catch (SQLException e) {
+        //         e.printStackTrace();
+        //     }
+        // }
     %>
     <img src="https://cdn.discordapp.com/attachments/908889456818397267/1168852446634852452/1697550731048120.gif" alt="ryan">
 </body>
