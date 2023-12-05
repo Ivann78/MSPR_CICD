@@ -33,16 +33,17 @@
     <br>
 
     <%
-    // Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/DB?user=root&password=myPassword");
-    String url = "jdbc:mariadb://localhost:3306/films";
-    String user = "root";
-    String password = "root";
+    // String url = "jdbc:mysql://localhost:3306/films";
+    // String user = "root";
+    // String password = "root";
 
         // Charger le pilote JDBC
-        Class.forName("com.mysql.jdbc.Driver");
+        // Class.forName("com.mysql.jdbc.Driver");
 
         // Établir la connexion
-        Connection conn = DriverManager.getConnection(url, user, password);
+        // Connection conn = DriverManager.getConnection(url, user, password);
+
+        Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/films?user=root&password=root");
 
         // Exemple de requête SQL
         String sql = "SELECT idFilm, titre, année FROM Film WHERE année >= 2000 ORDER BY année ASC";
