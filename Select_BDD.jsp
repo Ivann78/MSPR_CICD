@@ -25,15 +25,25 @@
         PreparedStatement pstmt = conn.prepareStatement(sql);
         ResultSet rs = pstmt.executeQuery();
 
+        
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    
+
+        out.println("<table>");
+
         // Afficher les résultats (à adapter selon vos besoins)
         while (rs.next()) {
             String colonne1 = rs.getString("idFilm");
             String colonne2 = rs.getString("titre");
             String colonne3 = rs.getString("année");
-            // Faites ce que vous voulez avec les données...
-            //Exemple d'affichage de 2 colonnes
-            out.println(colonne1 + ": " + colonne2 + " (" + colonne3 + ")</br>");
+
+            out.println("<tr><td>" + colonne1 + "</td><td>" + colonne2 + "</td><td>" + colonne3 + "</td></tr>");
         }
+
+        out.println("</table>");
 
         // Fermer les ressources 
         rs.close();
