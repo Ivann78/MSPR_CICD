@@ -26,11 +26,11 @@
         }
     %>
 
-    <form action="" method="get">
+    <%-- <form action="" method="get">
         <input name="annee" type="text" value="<% out.println(annee); %>">
         <input type="submit">
     </form>
-    <br>
+    <br> --%>
 
     <% 
     String url = "jdbc:mysql://localhost:3306/films";
