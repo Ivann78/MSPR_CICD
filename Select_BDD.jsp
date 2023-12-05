@@ -43,10 +43,7 @@ Connection conn = DriverManager.getConnection(url, user, password);
         if (request.getParameter("add_name") != null && !request.getParameter("add_name").equals("") && request.getParameter("add_annee") != null && !request.getParameter("add_annee").equals("")) {
             try {
                 PreparedStatement pstmt = conn.prepareStatement("SELECT max(idFilm) FROM Film");
-                pstmt.setString(1, annee);
                 ResultSet rs = pstmt.executeQuery();
-
-                out.println("<table><tr><th>ID</th><th>Titre</th><th>Année</th></tr>");
 
                 while (rs.next()) {
                     String colonne1 = rs.getString("idFilm");
