@@ -98,7 +98,7 @@ Connection conn = DriverManager.getConnection(url, user, password);
     <form name="add_title" method="post">
         <input name="add_name" type="text" placeholder="Nom">
         <input name="add_annee" type="text" placeholder="Année">
-        <input name="add_name" type="text" placeholder="Genre">
+        <input name="add_genre" type="text" placeholder="Genre">
         <input type="submit">
     </form>
     <br>
