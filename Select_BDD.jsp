@@ -10,8 +10,8 @@
 
 <style>
     td {
-        padding-left: 0.1rem;
-        padding-right: 0.1rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
 </style>
 
