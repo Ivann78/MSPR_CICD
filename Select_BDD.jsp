@@ -1,6 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 
+<%
+String url = "jdbc:mariadb://localhost:3306/films";
+String user = "mysql";
+String password = "mysql";
+
+Class.forName("org.mariadb.jdbc.Driver");
+Connection conn = DriverManager.getConnection(url, user, password);
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,12 +28,18 @@
     <h1>Exemple de connexion à MySQL via JSP</h1>
 
     <%
+        if (request.getParameter("id") != null && request.getParameter("name") != null ) {
+            PreparedStatement pstmt = conn.prepareStatement("UPDATE Film SET titre = ? WHERE id = ?;");
+            pstmt.setString(1, request.getParameter("id"));
+            pstmt.setString(2, request.getParameter("name"));
+            ResultSet rs = pstmt.executeQuery();
+        }
+
         String annee = "2000";
         if (request.getParameter("annee") != null) {
             annee = request.getParameter("annee");
         }
 
-        out.println(request.getParameter("edit_name"));
         out.println(request.getParameter("name"));
         out.println(request.getParameter("id"));
     %>
@@ -45,13 +60,6 @@
     <br>
 
     <%
-        String url = "jdbc:mariadb://localhost:3306/films";
-        String user = "mysql";
-        String password = "mysql";
-
-        Class.forName("org.mariadb.jdbc.Driver");
-        Connection conn = DriverManager.getConnection(url, user, password);
-
         PreparedStatement pstmt = conn.prepareStatement("SELECT idFilm, titre, année FROM Film WHERE année >= ? ORDER BY année ASC");
         pstmt.setString(1, annee);
         ResultSet rs = pstmt.executeQuery();
