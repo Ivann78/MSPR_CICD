@@ -19,20 +19,20 @@
     <h1>Exemple de connexion à MySQL via JSP</h1>
 
     <%
-        if (request.getParameter("annee") != null) {
-            String annee = request.getParameter("annee");
-        } else {
-            String annee = "";
-        }
+        // if (request.getParameter("annee") != null) {
+        //     String annee = request.getParameter("annee");
+        // } else {
+        //     String annee = "";
+        // }
     %>
 
     <%-- <form action="" method="get">
         <input name="annee" type="text" value="<% out.println(annee); %>">
         <input type="submit">
-    </form>
-    <br> --%>
+    </form> --%>
+    <br>
 
-    <% 
+    <%
     String url = "jdbc:mysql://localhost:3306/films";
     String user = "root";
     String password = "root";
