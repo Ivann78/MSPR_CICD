@@ -29,10 +29,10 @@ Connection conn = DriverManager.getConnection(url, user, password);
 
     <%
         if (request.getParameter("id") != null && request.getParameter("name") != null ) {
-            PreparedStatement pstmt = conn.prepareStatement("UPDATE Film SET titre = ? WHERE id = ?;");
-            pstmt.setString(1, request.getParameter("id"));
-            pstmt.setString(2, request.getParameter("name"));
-            ResultSet rs = pstmt.executeQuery();
+            // PreparedStatement pstmt = conn.prepareStatement("UPDATE Film SET titre = ? WHERE id = ?;");
+            // pstmt.setString(1, request.getParameter("id"));
+            // pstmt.setString(2, request.getParameter("name"));
+            // ResultSet rs = pstmt.executeQuery();
         }
 
         String annee = "2000";
