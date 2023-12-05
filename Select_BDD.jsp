@@ -29,13 +29,13 @@ Connection conn = DriverManager.getConnection(url, user, password);
 
     <%
         if (request.getParameter("id") != null && request.getParameter("name") != null && !request.getParameter("name").equals("")) {
-            out.println("True")
+            out.println("True");
             // PreparedStatement pstmt = conn.prepareStatement("UPDATE Film SET titre = ? WHERE id = ?;");
             // pstmt.setString(1, request.getParameter("id"));
             // pstmt.setString(2, request.getParameter("name"));
             // ResultSet rs = pstmt.executeQuery();
         } else {
-            out.println("False")
+            out.println("False");
         }
 
         String annee = "2000";
