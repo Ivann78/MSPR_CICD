@@ -19,17 +19,17 @@
     <h1>Exemple de connexion à MySQL via JSP</h1>
 
     <%
-        // if (request.getParameter("annee") != null) {
-        //     String annee = request.getParameter("annee");
-        // } else {
-        //     String annee = "";
-        // }
+        if (request.getParameter("annee") != null) {
+            String annee = request.getParameter("annee");
+        } else {
+            String annee = "";
+        }
     %>
 
-    <%-- <form action="" method="get">
+    <form action="" method="get">
         <input name="annee" type="text" value="<% out.println(annee); %>">
         <input type="submit">
-    </form> --%>
+    </form>
     <br>
 
     <%
@@ -47,7 +47,6 @@
         out.println("<table><tr><th>ID</th><th>Titre</th><th>Année</th></tr>");
 
         while (rs.next()) {
-            out.println("<tr><td>rs</td></tr>");
             String colonne1 = rs.getString("idFilm");
             String colonne2 = rs.getString("titre");
             String colonne3 = rs.getString("année");
