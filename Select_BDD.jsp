@@ -56,7 +56,7 @@ Connection conn = DriverManager.getConnection(url, user, password);
                     out.println(newId);
 
                     PreparedStatement pstmt2 = conn.prepareStatement("INSERT INTO Film (idFilm, titre, année) VALUES (?, ?, ?);");
-                    pstmt2.setString(1, newId);
+                    pstmt2.setInt(1, newId);
                     pstmt2.setString(2, request.getParameter("add_name"));
                     pstmt2.setString(3, request.getParameter("add_annee"));
                     ResultSet rowInsert = pstmt2.executeQuery();
