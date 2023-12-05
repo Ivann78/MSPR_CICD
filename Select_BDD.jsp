@@ -28,15 +28,26 @@ Connection conn = DriverManager.getConnection(url, user, password);
     <h1>Exemple de connexion à MySQL via JSP</h1>
 
     <%
-        if (request.getParameter("id") != null && request.getParameter("name") != null && !request.getParameter("name").equals("")) {
+        if (request.getParameter("edit_id") != null && request.getParameter("edit_name") != null && !request.getParameter("edit_name").equals("")) {
             try {
                 PreparedStatement pstmt = conn.prepareStatement("UPDATE Film SET titre = ? WHERE idFilm = ?;");
-                pstmt.setString(1, request.getParameter("name"));
-                pstmt.setString(2, request.getParameter("id"));
+                pstmt.setString(1, request.getParameter("edit_name"));
+                pstmt.setString(2, request.getParameter("edit_id"));
                 int rowUpdate = pstmt.executeUpdate();
-                out.println(rowUpdate + " row(s) updated.");
             } catch (SQLException e) {
-                out.println("Error updating the database: " + e.getMessage());
+                out.println("Error: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+
+        if (request.getParameter("add_name") != null && !request.getParameter("add_name").equals("") && request.getParameter("add_annee") != null && !request.getParameter("add_annee").equals("")) {
+            try {
+                PreparedStatement pstmt = conn.prepareStatement("INSERT INTO Film (titre, année) VALUES ('?', '?');");
+                pstmt.setString(1, request.getParameter("add_name"));
+                pstmt.setString(2, request.getParameter("add_annee"));
+                int rowInsert = pstmt.executeQuery();
+            } catch (SQLException e) {
+                out.println("Error: " + e.getMessage());
                 e.printStackTrace();
             }
         }
@@ -50,17 +61,25 @@ Connection conn = DriverManager.getConnection(url, user, password);
         out.println(request.getParameter("id"));
     %>
 
-    <p>Recherche par année</p>
+    Recherche par année:
     <form method="get">
         <input name="annee" type="text" value="<% out.println(annee); %>">
         <input type="submit">
     </form>
     <br>
 
-    <p>Modifier un titre</p>
+    Modifier un titre:
     <form name="edit_name" method="post">
-        <input name="id" type="number" placeholder="id">
-        <input name="name" type="text" placeholder="Nouveau nom">
+        <input name="edit_id" type="number" placeholder="id">
+        <input name="edit_name" type="text" placeholder="Nouveau nom">
+        <input type="submit">
+    </form>
+    <br>
+
+    Ajouter un titre:
+    <form name="add_title" method="post">
+        <input name="add_name" type="text" placeholder="Nom">
+        <input name="add_annee" type="text" placeholder="Année">
         <input type="submit">
     </form>
     <br>
