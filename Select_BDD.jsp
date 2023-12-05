@@ -44,5 +44,6 @@
         conn.close();
     
     %>
+    <img src="https://cdn.discordapp.com/attachments/908889456818397267/1168852446634852452/1697550731048120.gif" alt="ryan">
 </body>
 </html>
