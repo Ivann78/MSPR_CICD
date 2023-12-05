@@ -20,14 +20,24 @@
 
     <%
         String annee = "2000";
-
         if (request.getParameter("annee") != null) {
             annee = request.getParameter("annee");
         }
+
+        out.println(request.getParameter("edit_name"));
+        out.println(request.getParameter("name"));
+        out.println(request.getParameter("id"));
     %>
 
     <form method="get">
         <input name="annee" type="text" value="<% out.println(annee); %>">
+        <input type="submit">
+    </form>
+    <br>
+
+    <form name="edit_name" method="post">
+        <input name="id" type="number" placeholder="id">
+        <input name="name" type="text" placeholder="Nouveau nom">
         <input type="submit">
     </form>
     <br>
