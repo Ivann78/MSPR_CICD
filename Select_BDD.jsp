@@ -45,7 +45,7 @@ Connection conn = DriverManager.getConnection(url, user, password);
                 PreparedStatement pstmt = conn.prepareStatement("INSERT INTO Film (titre, année) VALUES ('?', '?');");
                 pstmt.setString(1, request.getParameter("add_name"));
                 pstmt.setString(2, request.getParameter("add_annee"));
-                int rowInsert = pstmt.executeQuery();
+                ResultSet rowInsert = pstmt.executeQuery();
             } catch (SQLException e) {
                 out.println("Error: " + e.getMessage());
                 e.printStackTrace();
