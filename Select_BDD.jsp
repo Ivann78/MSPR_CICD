@@ -47,13 +47,13 @@ Connection conn = DriverManager.getConnection(url, user, password);
 
                 while (rs.next()) {
                     String maxId = rs.getString("maxId");
-                    out.println(maxId);
                 }
 
-                // PreparedStatement pstmt = conn.prepareStatement("INSERT INTO Film (titre, année) VALUES ('?', '?');");
-                // pstmt.setString(1, request.getParameter("add_name"));
-                // pstmt.setString(2, request.getParameter("add_annee"));
-                // ResultSet rowInsert = pstmt.executeQuery();
+                PreparedStatement pstmt = conn.prepareStatement("INSERT INTO Film (idFilm, titre, année) VALUES (?, ?, ?);");
+                pstmt.setString(1, maxId+1);
+                pstmt.setString(2, request.getParameter("add_name"));
+                pstmt.setString(3, request.getParameter("add_annee"));
+                ResultSet rowInsert = pstmt.executeQuery();
             } catch (SQLException e) {
                 out.println("Error: " + e.getMessage());
                 e.printStackTrace();
