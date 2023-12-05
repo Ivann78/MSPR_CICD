@@ -39,7 +39,7 @@
 
         try {
             Class.forName("org.mariadb.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/films?user=root&password=root");
+            connection = DriverManager.getConnection("jdbc:mariadb://localhost:8080/films?user=root&password=root");
 
             statement = connection.createStatement();
             String sql = "SELECT idFilm, titre, année FROM Film WHERE année >= 2000 ORDER BY année ASC";
