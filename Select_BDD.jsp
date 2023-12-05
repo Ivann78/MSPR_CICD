@@ -17,6 +17,9 @@
 
 <body>
     <h1>Exemple de connexion à MySQL via JSP</h1>
+
+    <form action="get"><input name="annee" type="text"><input type="reset"></form>
+
     <% 
     String url = "jdbc:mysql://localhost:3306/films";
     String user = "root";
