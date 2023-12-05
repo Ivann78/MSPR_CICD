@@ -41,6 +41,7 @@
         Connection conn = DriverManager.getConnection(url, user, password);
 
         String sql = "SELECT idFilm, titre, année FROM Film WHERE année >= " + annee + " ORDER BY année ASC";
+        out.println(sql);
         PreparedStatement pstmt = conn.prepareStatement(sql);
         ResultSet rs = pstmt.executeQuery();
 
