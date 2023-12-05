@@ -46,10 +46,8 @@ Connection conn = DriverManager.getConnection(url, user, password);
                 ResultSet rs = pstmt.executeQuery();
 
                 while (rs.next()) {
-                    String colonne1 = rs.getString("idFilm");
-                    String colonne2 = rs.getString("maxId");
-                    out.println(colonne1);
-                    out.println(colonne2);
+                    String maxId = rs.getString("maxId");
+                    out.println(maxId);
                 }
 
                 // PreparedStatement pstmt = conn.prepareStatement("INSERT INTO Film (titre, année) VALUES ('?', '?');");
