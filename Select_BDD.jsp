@@ -21,9 +21,10 @@
     <% String annee = request.getParameter("annee"); %>
 
     <form action="" method="get">
-        <input name="annee" type="text" value="<% out.println("annee"); %>">
+        <input name="annee" type="text" value="<% out.println(annee); %>">
         <input type="submit">
     </form>
+    <br>
 
     <% 
     String url = "jdbc:mysql://localhost:3306/films";
