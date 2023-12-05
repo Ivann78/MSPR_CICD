@@ -49,7 +49,7 @@
 
             // Afficher les résultats (à adapter selon vos besoins)
             while (rs.next()) {
-                out.println("rs");
+                out.println("<tr><td>rs</td></tr>");
                 String colonne1 = rs.getString("idFilm");
                 String colonne2 = rs.getString("titre");
                 String colonne3 = rs.getString("année");
