@@ -22,7 +22,7 @@
         if (request.getParameter("annee") != null) {
             String annee = request.getParameter("annee");
         } else {
-            String annee;
+            String annee = "";
         }
     %>
 
