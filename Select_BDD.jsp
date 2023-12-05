@@ -25,13 +25,6 @@
         PreparedStatement pstmt = conn.prepareStatement(sql);
         ResultSet rs = pstmt.executeQuery();
 
-        
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    
-
         out.println("<table>");
 
         // Afficher les résultats (à adapter selon vos besoins)
