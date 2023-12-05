@@ -45,7 +45,7 @@
             String sql = "SELECT idFilm, titre, année FROM Film WHERE année >= 2000 ORDER BY année ASC";
             rs = statement.executeQuery(sql);
 
-            out.println("<table>");
+            out.println("<table><tr><th>ID</th><th>Titre</th><th>Année</th></tr>");
 
             // Afficher les résultats (à adapter selon vos besoins)
             while (rs.next()) {
