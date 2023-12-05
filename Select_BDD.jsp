@@ -104,7 +104,7 @@ Connection conn = DriverManager.getConnection(url, user, password);
     <br>
 
     <%
-        PreparedStatement pstmt = conn.prepareStatement("SELECT idFilm, titre, année FROM Film WHERE année >= ? ORDER BY année ASC");
+        PreparedStatement pstmt = conn.prepareStatement("SELECT idFilm, titre, année, genre FROM Film WHERE année >= ? ORDER BY année ASC");
         pstmt.setString(1, annee);
         ResultSet rs = pstmt.executeQuery();
 
