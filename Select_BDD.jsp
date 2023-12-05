@@ -19,11 +19,11 @@
     <h1>Exemple de connexion à MySQL via JSP</h1>
 
     <%
-        if (request.getParameter("annee") != null) {
-            String annee = request.getParameter("annee");
-        } else {
-            String annee;
-        }
+        // if (request.getParameter("annee") != null) {
+        //     String annee = request.getParameter("annee");
+        // } else {
+        //     String annee;
+        // }
     %>
 
     <form action="" method="get">
