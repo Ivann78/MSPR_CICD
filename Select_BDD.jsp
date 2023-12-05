@@ -19,17 +19,15 @@
     <h1>Exemple de connexion à MySQL via JSP</h1>
 
     <%
-        String annee = "";
+        String annee = "2000";
 
         if (request.getParameter("annee") != null) {
             annee = request.getParameter("annee");
         }
-
-        out.println(annee);
     %>
 
-    <form action="" method="get">
-        <input name="annee" type="text" value="<% out.println(annee); %>">
+    <form method="get">
+        <input name="annee" type="number" value="<% out.println(annee); %>">
         <input type="submit">
     </form>
     <br>
@@ -42,7 +40,7 @@
         Class.forName("org.mariadb.jdbc.Driver");
         Connection conn = DriverManager.getConnection(url, user, password);
 
-        String sql = "SELECT idFilm, titre, année FROM Film WHERE année >= 2000 ORDER BY année ASC";
+        String sql = "SELECT idFilm, titre, année FROM Film WHERE année >= " + annee + " ORDER BY année ASC";
         PreparedStatement pstmt = conn.prepareStatement(sql);
         ResultSet rs = pstmt.executeQuery();
 
