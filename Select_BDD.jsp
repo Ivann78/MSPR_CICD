@@ -29,12 +29,14 @@
         out.println(request.getParameter("id"));
     %>
 
+    <p>Recherche par année</p>
     <form method="get">
         <input name="annee" type="text" value="<% out.println(annee); %>">
         <input type="submit">
     </form>
     <br>
 
+    <p>Modifier un titre</p>
     <form name="edit_name" method="post">
         <input name="id" type="number" placeholder="id">
         <input name="name" type="text" placeholder="Nouveau nom">
