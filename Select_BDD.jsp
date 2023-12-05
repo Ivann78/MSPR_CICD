@@ -35,7 +35,7 @@
     <%
         Connection connection = null;
         Statement statement = null;
-        ResultSet resultSet = null;
+        ResultSet rs = null;
 
         try {
             Class.forName("org.mariadb.jdbc.Driver");
