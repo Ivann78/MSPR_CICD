@@ -35,7 +35,7 @@
         String colonne2 = rs.getString("equi_lat");
         String colonne3 = rs.getString("equi_long");
 
-        String data[] = colonne1, colonne2, colonne3;
+        String data[] = {colonne1, colonne2, colonne3};
         // Faites ce que vous voulez avec les données...
         //Exemple d'affichage de 2 colonnes
         // out.println("Batiment : " + colonne1 + ", latitude : " + colonne2 + ", Longitude : " + colonne3 + "</br>");
