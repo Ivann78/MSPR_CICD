@@ -15,7 +15,6 @@
   <%@ page import="java.util.List" %>
   <%@ page import="java.util.ArrayList" %>
 
-
   <% 
     String url = "jdbc:mariadb://localhost:3306/equipements";
     String user = "mysql";
@@ -71,18 +70,14 @@
 
   <body>
 
-
-
-<%
-                    for (int i = 0; i < coords.size(); i++) {
-                      List<String> data = coords.get(i);
-                      out.print(data.get(0)); %><br><%
-                      out.print(data.get(1)); %><br><%
-                      out.print(data.get(2)); %><br><%
-                    } 
-                    
-                    %>
-
+    <%
+      // for (int i = 0; i < coords.size(); i++) {
+      //   List<String> data = coords.get(i);
+      //   out.print(data.get(0)); %><br><%
+      //   out.print(data.get(1)); %><br><%
+      //   out.print(data.get(2)); %><br><%
+      // } 
+    %>
 
     <div id="map"></div>
 
@@ -92,7 +87,7 @@
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v12', // style URL
         center: [2.298376597261021, 48.855868203242444], // starting position
-        zoom: 13 // starting zoom
+        zoom: 15 // starting zoom
       });
  
       // Add zoom and rotation controls to the map.
