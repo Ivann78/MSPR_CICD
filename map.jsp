@@ -86,8 +86,8 @@
       const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v12', // style URL
-        center: [2.298376597261021, 48.855868203242444], // starting position
-        zoom: 15 // starting zoom
+        center: [2.294755922164993, 48.856924473056964], // starting position
+        zoom: 20 // starting zoom
       });
  
       // Add zoom and rotation controls to the map.
@@ -126,12 +126,11 @@
                     },
                   <% } %>
                   {
-                    // feature for Mapbox DC
                     'type': 'Feature',
                     'geometry': {
                       'type': 'Point',
                       'coordinates': [
-                        2.298376597261021, 48.855868203242444
+                        2.0164672695160633, 48.774297748558794
                       ]
                     },
                     'properties': {
