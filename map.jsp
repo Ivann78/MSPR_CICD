@@ -126,7 +126,7 @@
                         ]
                       },
                       'properties': {
-                        'title': '<% out.print(data.get(0)); %>'
+                        'title': "<% out.print(data.get(0)); %>"
                       }
                     },
                   <% } %>
