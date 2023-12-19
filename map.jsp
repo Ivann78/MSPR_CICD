@@ -20,7 +20,8 @@
     String url = "jdbc:mariadb://localhost:3306/equipements";
     String user = "mysql";
     String password = "mysql";
-    List<String[]> coords = new ArrayList<>();
+    // List<String[]> coords = new ArrayList<>();
+    String[][] coords = new String[][]; // Assuming you want to store 10 sets of coordinates with 3 values each
 
     // Charger le pilote JDBC
     Class.forName("org.mariadb.jdbc.Driver");
@@ -51,9 +52,7 @@
     conn.close();
 
 
-    for (int i=0;i<array.length;i++) {
-      out.print(coords[i]+"<br/>");
-    }
+
     %>
 
   <style>
