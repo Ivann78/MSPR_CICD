@@ -55,8 +55,9 @@
     conn.close();
 
     for (int i = 0; i < coords.size(); i++) {
-      out.print("<P>" + coords[i][0] + "</p>");
-   }
+        List<String> data = coords.get(i);
+        out.print("<p>" + data.get(0) + "</p>");
+    }
   %>
 
   <style>
