@@ -29,29 +29,20 @@
 
   <body>
 
-    <%-- <div id='map' style='width: 1000px; height: 1000px;'></div> --%>
     <div id="map"></div>
-
-    <%-- <script>
-      mapboxgl.accessToken = 'pk.eyJ1IjoiaXZhbm5tIiwiYSI6ImNscWM1ZHdwZzAxa3gyanBobGs4cDlndmQifQ.hOGfE1JWAq_vuiBHa5STxQ';
-      var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11'
-      });
-    </script> --%>
 
     <script>
 	    mapboxgl.accessToken = 'pk.eyJ1IjoiaXZhbm5tIiwiYSI6ImNscWM1ZHdwZzAxa3gyanBobGs4cDlndmQifQ.hOGfE1JWAq_vuiBHa5STxQ';
       const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v12', // style URL
-        //center: [-74.5, 40], // starting position
-        center: [2.0164672695160633, 48.774297748558794],
+        center: [2.0164672695160633, 48.774297748558794], // starting position
         zoom: 15 // starting zoom
       });
  
       // Add zoom and rotation controls to the map.
       map.addControl(new mapboxgl.NavigationControl());
+      map.addControl(new mapboxgl.ScaleControl());
     </script>
 
   </body>
