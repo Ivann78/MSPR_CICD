@@ -36,7 +36,6 @@
     // Afficher les résultats (à adapter selon vos besoins)
     int i = 0;
     while (rs.next()) {
-        i++;
         String colonne1 = rs.getString("equi_libelle");
         String colonne2 = rs.getString("equi_lat");
         String colonne3 = rs.getString("equi_long");
@@ -46,6 +45,7 @@
         String data[i][2] = colonne3;
 
         // out.println("Batiment : " + colonne1 + ", latitude : " + colonne2 + ", Longitude : " + colonne3 + "</br>");
+        i++;
     }
 
     // Fermer les ressources 
