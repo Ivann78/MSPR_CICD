@@ -12,14 +12,17 @@
 </head>
 <body>
 
-<div id='map' style='width: screen.width; height: screen.height;'></div>
-<script>
-  mapboxgl.accessToken = 'pk.eyJ1IjoiaXZhbm5tIiwiYSI6ImNscWM1ZHdwZzAxa3gyanBobGs4cDlndmQifQ.hOGfE1JWAq_vuiBHa5STxQ';
+<div id='map' style='width: 1000px; height: 1000px;'></div>
+
+
+
+<%
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiaXZhbm5tIiwiYSI6ImNscWM1ZHdwZzAxa3gyanBobGs4cDlndmQifQ.hOGfE1JWAq_vuiBHa5STxQ';
   var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11'
   });
-</script>
 
 
 
@@ -32,7 +35,8 @@
 
 
 
-    <% 
+
+
 //     String url = "jdbc:mariadb://localhost:3306/equipements";
 //     String user = "mysql";
 //     String password = "mysql";
