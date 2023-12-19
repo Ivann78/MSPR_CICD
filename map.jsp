@@ -54,7 +54,7 @@
     pstmt.close();
     conn.close();
 
-    for (int i = 0; i < coords.length; i++) {
+    for (int i = 0; i < coords.size(); i++) {
       out.print("<P>" + coords[i][0] + "</p>");
    }
   %>
