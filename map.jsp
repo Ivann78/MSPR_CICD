@@ -76,8 +76,9 @@
 <%
                     for (int i = 0; i < coords.size(); i++) {
                       List<String> data = coords.get(i);
-                      out.print(data.get(1));
-                      out.print(data.get(2));
+                      out.print(data.get(0)); %><br><%
+                      out.print(data.get(1)); %><br><%
+                      out.print(data.get(2)); %><br><%
                     } 
                     
                     %>
@@ -144,10 +145,6 @@
                       'title': 'Vous êtes ici'
                     }
                   },
-
-
-
-
 
                   {
                     // feature for Mapbox DC
