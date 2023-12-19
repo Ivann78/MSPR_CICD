@@ -43,7 +43,7 @@
         data.add(colonne1);
         data.add(colonne2);
         data.add(colonne3);
-        
+
         coords.add(data);
 
         // out.println("Batiment : " + colonne1 + ", latitude : " + colonne2 + ", Longitude : " + colonne3 + "</br>");
@@ -54,9 +54,10 @@
     pstmt.close();
     conn.close();
 
-
-
-    %>
+    for (int i = 0; i < coords.length; i++) {
+      out.print("<P>" + colors[i][0] + "</p>");
+   }
+  %>
 
   <style>
     body {
@@ -103,7 +104,19 @@
               'data': {
                 'type': 'FeatureCollection',
                 'features': [
-                  
+                  {
+                    // feature for Mapbox DC
+                    'type': 'Feature',
+                    'geometry': {
+                      'type': 'Point',
+                      'coordinates': [
+                        2.0164672695160633, 48.774297748558794
+                      ]
+                    },
+                    'properties': {
+                      'title': 'Vous êtes ici'
+                    }
+                  },
                   {
                     // feature for Mapbox DC
                     'type': 'Feature',
