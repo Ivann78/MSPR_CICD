@@ -86,8 +86,8 @@
       const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v12', // style URL
-        center: [2.2936023767002816, 48.85652290462329], // starting position
-        zoom: 17 // starting zoom
+        center: [2.294338019346423, 48.856803474942076], // starting position
+        zoom: 16.5 // starting zoom
       });
  
       // Add zoom and rotation controls to the map.
