@@ -17,7 +17,7 @@
     String url = "jdbc:mariadb://localhost:3306/equipements";
     String user = "mysql";
     String password = "mysql";
-    String coords[] = new String[0];
+    List<String[]> coords = new ArrayList<>();
 
     // Charger le pilote JDBC
     Class.forName("org.mariadb.jdbc.Driver");
@@ -36,7 +36,7 @@
         String colonne3 = rs.getString("equi_long");
 
         String data[] = {colonne1, colonne2, colonne3};
-        coords.add(data[]);
+        coords.add(data);
         // Faites ce que vous voulez avec les données...
         //Exemple d'affichage de 2 colonnes
         // out.println("Batiment : " + colonne1 + ", latitude : " + colonne2 + ", Longitude : " + colonne3 + "</br>");
