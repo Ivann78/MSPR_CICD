@@ -100,23 +100,19 @@
               'data': {
                 'type': 'FeatureCollection',
                 'features': [
-                  <%
-                    for (int i = 0; i < coords.size(); i++) {
-                      List<String> data = coords.get(i);
-                  %>
-                    {
-                      'type': 'Feature',
-                      'geometry': {
-                        'type': 'Point',
-                        'coordinates': [
-                          <% out.print(data.get(1)); %>, <% out.print(data.get(2)); %>
-                        ]
-                      },
-                      'properties': {
-                        'title': '<% out.print(data.get(0)); %>'
-                      }
+                  {
+                    // feature for Mapbox DC
+                    'type': 'Feature',
+                    'geometry': {
+                      'type': 'Point',
+                      'coordinates': [
+                        3, 48
+                      ]
                     },
-                  <% } %>
+                    'properties': {
+                      'title': 'Vous êtes ici'
+                    }
+                  },
                   {
                     // feature for Mapbox DC
                     'type': 'Feature',
