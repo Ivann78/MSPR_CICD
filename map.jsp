@@ -53,11 +53,6 @@
     rs.close();
     pstmt.close();
     conn.close();
-
-    for (int i = 0; i < coords.size(); i++) {
-        List<String> data = coords.get(i);
-        out.print("<p>" + data.get(0) + "</p>");
-    }
   %>
 
   <style>
@@ -105,19 +100,23 @@
               'data': {
                 'type': 'FeatureCollection',
                 'features': [
-                  {
-                    // feature for Mapbox DC
-                    'type': 'Feature',
-                    'geometry': {
-                      'type': 'Point',
-                      'coordinates': [
-                        2.0164672695160633, 48.774297748558794
-                      ]
+                  <%
+                    for (int i = 0; i < coords.size(); i++) {
+                      List<String> data = coords.get(i);
+                  %>
+                    {
+                      'type': 'Feature',
+                      'geometry': {
+                        'type': 'Point',
+                        'coordinates': [
+                          <% out.print(data.get(1)); %>, <% out.print(data.get(2)); %>
+                        ]
+                      },
+                      'properties': {
+                        'title': '<% out.print(data.get(0)); %>'
+                      }
                     },
-                    'properties': {
-                      'title': 'Vous êtes ici'
-                    }
-                  },
+                  <% } %>
                   {
                     // feature for Mapbox DC
                     'type': 'Feature',
