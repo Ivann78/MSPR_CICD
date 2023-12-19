@@ -17,8 +17,8 @@
         Class.forName("org.mariadb.jdbc.Driver");
 
         // Établir la connexion
-Connection conn = DriverManager.getConnection(url, user, password);
-            // Exemple de requête SQL
+        Connection conn = DriverManager.getConnection(url, user, password);
+        // Exemple de requête SQL
         String sql = "SELECT equi_id, equi_libelle, equi_lat, equi_long, get_distance_metres('48.858205', '2.294359', equi_lat, equi_long) AS proximite FROM equipement HAVING proximite < 1000 ORDER BY proximite ASC LIMIT 10;";
         PreparedStatement pstmt = conn.prepareStatement(sql);
         ResultSet rs = pstmt.executeQuery();
