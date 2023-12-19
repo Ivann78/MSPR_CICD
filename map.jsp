@@ -113,7 +113,6 @@
               'data': {
                 'type': 'FeatureCollection',
                 'features': [
-
                   <%
                     for (int i = 0; i < coords.size(); i++) {
                       List<String> data = coords.get(i);
@@ -131,21 +130,6 @@
                       }
                     },
                   <% }, %>
-
-                  {
-                    // feature for Mapbox DC
-                    'type': 'Feature',
-                    'geometry': {
-                      'type': 'Point',
-                      'coordinates': [
-                        3, 48
-                      ]
-                    },
-                    'properties': {
-                      'title': 'Vous êtes ici'
-                    }
-                  },
-
                   {
                     // feature for Mapbox DC
                     'type': 'Feature',
