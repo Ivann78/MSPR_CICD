@@ -21,7 +21,7 @@
     String user = "mysql";
     String password = "mysql";
     // List<String[]> coords = new ArrayList<>();
-    String[][] coords = new String[][]; // Assuming you want to store 10 sets of coordinates with 3 values each
+    String[][] coords = new String[0][0];
 
     // Charger le pilote JDBC
     Class.forName("org.mariadb.jdbc.Driver");
