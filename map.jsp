@@ -1,74 +1,58 @@
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+<!DOCTYPE html>
+<html lang="fr">
 
-
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
-
-<html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="utf-8">
     <title>Carte</title>
-</head>
-<body>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 
-<script>
-print
-</script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+  </head>
 
-<div id='map' style='width: 1000px; height: 1000px;'></div>
-<script>
-  mapboxgl.accessToken = 'pk.eyJ1IjoiaXZhbm5tIiwiYSI6ImNscWM1ZHdwZzAxa3gyanBobGs4cDlndmQifQ.hOGfE1JWAq_vuiBHa5STxQ';
-  var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11'
-  });
-</script>
+  <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+  <%@ page import="java.sql.*" %>
 
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
 
-<%
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
 
+  <body>
 
+    <%-- <div id='map' style='width: 1000px; height: 1000px;'></div> --%>
+    <div id="map"></div>
 
+    <%-- <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoiaXZhbm5tIiwiYSI6ImNscWM1ZHdwZzAxa3gyanBobGs4cDlndmQifQ.hOGfE1JWAq_vuiBHa5STxQ';
+      var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11'
+      });
+    </script> --%>
 
+    <script>
+	    mapboxgl.accessToken = 'pk.eyJ1IjoiaXZhbm5tIiwiYSI6ImNscWM1ZHdwZzAxa3gyanBobGs4cDlndmQifQ.hOGfE1JWAq_vuiBHa5STxQ';
+      const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v12', // style URL
+        center: [-74.5, 40], // starting position
+        zoom: 9 // starting zoom
+      });
+ 
+      // Add zoom and rotation controls to the map.
+      map.addControl(new mapboxgl.NavigationControl());
+    </script>
 
+  </body>
 
-
-
-
-
-
-
-
-
-//     String url = "jdbc:mariadb://localhost:3306/equipements";
-//     String user = "mysql";
-//     String password = "mysql";
-
-//         // Charger le pilote JDBC
-//         Class.forName("org.mariadb.jdbc.Driver");
-
-//         // Établir la connexion
-// Connection conn = DriverManager.getConnection(url, user, password);
-//             // Exemple de requête SQL
-//         String sql = "SELECT equi_id, equi_libelle, equi_lat, equi_long, get_distance_metres('48.858205', '2.294359', equi_lat, equi_long) AS proximite FROM equipement HAVING proximite < 1000 ORDER BY proximite ASC LIMIT 10;";
-//         PreparedStatement pstmt = conn.prepareStatement(sql);
-//         ResultSet rs = pstmt.executeQuery();
-
-//         // Afficher les résultats (à adapter selon vos besoins)
-//         while (rs.next()) {
-//             String colonne1 = rs.getString("equi_libelle");
-//             String colonne2 = rs.getString("equi_lat");
-//             String colonne3 = rs.getString("equi_long");
-//             // Faites ce que vous voulez avec les données...
-//             //Exemple d'affichage de 2 colonnes
-//             out.println("Batiment : " + colonne1 + ", latitude : " + colonne2 + ", Longitude : " + colonne3 + "</br>");
-//         }
-
-//         // Fermer les ressources 
-//         rs.close();
-//         pstmt.close();
-//         conn.close();
-    %>
-</body>
 </html>
