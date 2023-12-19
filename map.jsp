@@ -50,7 +50,8 @@
     pstmt.close();
     conn.close();
 
-    for (i=0;i<array.length;i++) {
+
+    for (int i=0;i<array.length;i++) {
       out.print(coords[i]+"<br/>");
     }
     %>
