@@ -34,15 +34,17 @@
     ResultSet rs = pstmt.executeQuery();
 
     // Afficher les résultats (à adapter selon vos besoins)
+    int i = 0;
     while (rs.next()) {
+        i++;
         String colonne1 = rs.getString("equi_libelle");
         String colonne2 = rs.getString("equi_lat");
         String colonne3 = rs.getString("equi_long");
 
-        String data[] = {colonne1, colonne2, colonne3};
-        coords.add(data);
-        // Faites ce que vous voulez avec les données...
-        //Exemple d'affichage de 2 colonnes
+        String data[i][0] = colonne1;
+        String data[i][1] = colonne2;
+        String data[i][2] = colonne3;
+
         // out.println("Batiment : " + colonne1 + ", latitude : " + colonne2 + ", Longitude : " + colonne3 + "</br>");
     }
 
