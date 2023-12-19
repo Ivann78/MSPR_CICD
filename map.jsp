@@ -40,9 +40,9 @@
         String colonne2 = rs.getString("equi_lat");
         String colonne3 = rs.getString("equi_long");
 
-        String coords[i][0] = colonne1;
-        String coords[i][1] = colonne2;
-        String coords[i][2] = colonne3;
+        coords[i][0] = colonne1;
+        coords[i][1] = colonne2;
+        coords[i][2] = colonne3;
 
         // out.println("Batiment : " + colonne1 + ", latitude : " + colonne2 + ", Longitude : " + colonne3 + "</br>");
         i++;
