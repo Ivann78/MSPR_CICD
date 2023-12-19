@@ -47,7 +47,7 @@
         style: 'mapbox://styles/mapbox/streets-v12', // style URL
         //center: [-74.5, 40], // starting position
         center: [2.0164672695160633, 48.774297748558794],
-        zoom: 5 // starting zoom
+        zoom: 15 // starting zoom
       });
  
       // Add zoom and rotation controls to the map.
