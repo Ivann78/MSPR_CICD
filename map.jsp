@@ -130,7 +130,7 @@
                         'title': '<% out.print(data.get(0)); %>'
                       }
                     },
-                  <% } %>
+                  <% }, %>
 
                   {
                     // feature for Mapbox DC
