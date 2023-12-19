@@ -84,7 +84,7 @@
                     %>
 
 
-    <%-- <div id="map"></div> --%>
+    <div id="map"></div>
 
     <script>
 	    mapboxgl.accessToken = 'pk.eyJ1IjoiaXZhbm5tIiwiYSI6ImNscWM1ZHdwZzAxa3gyanBobGs4cDlndmQifQ.hOGfE1JWAq_vuiBHa5STxQ';
