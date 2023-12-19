@@ -123,7 +123,7 @@
                       'geometry': {
                         'type': 'Point',
                         'coordinates': [
-                          <% out.print(data.get(1)); %>, <% out.print(data.get(2)); %>
+                          <% out.print(parseFloat(data.get(1))); %>, <% out.print(parseFloat(data.get(2))); %>
                         ]
                       },
                       'properties': {
