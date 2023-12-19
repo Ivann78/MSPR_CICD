@@ -12,17 +12,21 @@
 </head>
 <body>
 
+<script>
+print
+</script>
+
 <div id='map' style='width: 1000px; height: 1000px;'></div>
-
-
-
-<%
-
-mapboxgl.accessToken = 'pk.eyJ1IjoiaXZhbm5tIiwiYSI6ImNscWM1ZHdwZzAxa3gyanBobGs4cDlndmQifQ.hOGfE1JWAq_vuiBHa5STxQ';
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiaXZhbm5tIiwiYSI6ImNscWM1ZHdwZzAxa3gyanBobGs4cDlndmQifQ.hOGfE1JWAq_vuiBHa5STxQ';
   var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11'
   });
+</script>
+
+
+<%
 
 
 
