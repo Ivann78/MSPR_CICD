@@ -87,7 +87,7 @@
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v12', // style URL
         center: [2.294338019346423, 48.856803474942076], // starting position
-        zoom: 16.5 // starting zoom
+        zoom: 16.7 // starting zoom
       });
  
       // Add zoom and rotation controls to the map.
