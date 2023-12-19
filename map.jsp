@@ -55,7 +55,7 @@
     conn.close();
 
     for (int i = 0; i < coords.length; i++) {
-      out.print("<P>" + colors[i][0] + "</p>");
+      out.print("<P>" + coords[i][0] + "</p>");
    }
   %>
 
